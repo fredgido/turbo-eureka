@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <link href="index.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.12.1/dist/cdn.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+  </head>
+  <body class="bg-slate-800 text-white">
+    <main class="px-4 py-10">
+      <section id="search-container" class="">
+        <form id="search-form">
+          <table>
+            <tr>
+              <th><label for="search_id">Tweet ID</label></th>
+              <td><input id="search_id" name="search[id]" type="text" placeholder="1..100"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_user">User</label></th>
+              <td><input id="search_user" name="search[user]" type="text" placeholder="@name or id"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_body">Body</label></th>
+              <td><input id="search_body" name="search[body]" type="text"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_hashtags">Hashtags</label></th>
+              <td><input id="search_hashtags" name="search[hashtags]" type="text" placeholder="Separate with spaces"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_mentions">Mentions User</label></th>
+              <td><input id="search_mentions" name="search[mentions]" type="text" placeholder="Separate with spaces"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_urls">URLs</label></th>
+              <td><input id="search_urls" name="search[urls]" type="text" placeholder="Separate with spaces"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_timestamp">Timestamp</label></th>
+              <td><input id="search_timestamp" name="search[timestamp]" type="datetime-local"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_retweets">Retweets</label></th>
+              <td><input id="search_retweets" name="search[retweets]" type="text" placeholder="1..100"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_favorites">Favorites</label></th>
+              <td><input id="search_favorites" name="search[favorites]" type="text" placeholder="1..100"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_replies">Replies</label></th>
+              <td><input id="search_replies" name="search[replies]" type="text" placeholder="1..100"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_views">Views</label></th>
+              <td><input id="search_views" name="search[views]" type="text" placeholder="1..100"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_is_quote_tweet">Is Quote Tweet?</label></th>
+              <td><input id="search_is_quote_tweet" name="search[is_quote_tweet]" type="checkbox"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_is_retweet">Is Retweet?</label></th>
+              <td><input id="search_is_retweet" name="search[is_retweet]" type="checkbox"></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_has_images">Has Images?</label></th>
+              <td><input id="search_has_images" name="search[has_images]" type="checkbox" checked></td>
+            </tr>
+
+            <tr>
+              <th><label for="search_has_videos">Has Videos?</label></th>
+              <td><input id="search_has_viedos" name="search[has_videos]" type="checkbox"></td>
+            </tr>
+
+            <tr>
+              <td colspan="2">
+                <input type="submit" value="Search">
+              </td>
+            </tr>
+          </table>
+        </form>
+      </section>
+
+      <section id="tweet-container">
+
+      </section>
+    </main>
+  </body>
+</html>

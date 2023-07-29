@@ -50,8 +50,12 @@ main {
       /* margin-left: -1ex; */
       background-color: rgb(71 85 105);
       width: 100%;
-      height: 100%;
+      /* height: 100%; */
       display: block;
+    }
+
+    input[type=checkbox] {
+      height: 28px;
     }
 
     input[type=checkbox] + label::after {

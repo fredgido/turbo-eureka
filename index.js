@@ -1,4 +1,4 @@
-const API_URL = "http://home.fredgido.com:7038/tweets?";
+const API_URL = "https://tweet-api.fredgido.com/tweets?";
 
 function TweetCard(tweet, assets, user) {
   const timestamp = Date(tweet.id / 4194304 + 1288834974657);
@@ -39,7 +39,7 @@ function TweetCard(tweet, assets, user) {
       <span>${tweet.reply_count} replies</span>
       <span>${tweet.retweet_count} retweets</span>
       <span>${tweet.favorite_count} favs</span>
-      <span>${tweet.views} views</span>
+      <span>${tweet.views || '?'} views</span>
     </section>
   </article>
   `;

@@ -1,7 +1,7 @@
 const API_URL = "https://tweet-api.fredgido.com/tweets?";
 
 function TweetCard(tweet, assets, user) {
-  const timestamp = Date(tweet.id / 4194304 + 1288834974657);
+  const timestamp = dayjs((new BigNumber(tweet.id)).dividedBy(4194304).plus(1288834974657).toNumber());
   const text = tweet.hashtags
     .reduce((agg, tag) => agg.replace("#" + tag, `<a href="https://twitter.com/hashtag/${tag}">#${tag}</a>`), tweet.full_text)
     .replace(/https?:\/\/t\.co\/\w+/, "");

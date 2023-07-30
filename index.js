@@ -52,7 +52,7 @@ function loadTweetFeed(params) {
   fetch(API_URL + new URLSearchParams(params), {
     method: "GET",
     body: undefined,
-  }).then(resp => resp.json()).then(tweets => {
+  }).then(resp => resp.text()).then(respText => JSONbig.parse(respText) ).then(tweets => {
     for (const tweetData of tweets) {
       let card = TweetCard(tweetData.post, tweetData.assets, tweetData.user[0]);
       $("#tweet-container").append(card);

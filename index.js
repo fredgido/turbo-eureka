@@ -1,5 +1,7 @@
 const API_URL = "https://tweet-api.fredgido.com/tweets?";
 
+const PROXY_URL= "http://home.fredgido.com:7034/twitter_proxy?url=";
+
 function TweetCard(tweet, assets, user) {
   const timestamp = dayjs((new BigNumber(tweet.id)).dividedBy(4194304).plus(1288834974657).toNumber());
   const text = tweet.hashtags
@@ -8,8 +10,9 @@ function TweetCard(tweet, assets, user) {
 
   let html = `
   <article>
-    <span class="tweet-id">Tweet #${tweet.id}</span>
-
+    <a href="https://twitter.com/i/status/${tweet.id}">
+      <span class="tweet-id">Tweet #${tweet.id}</span>
+    </a>
     <section class="tweet-header">
       <a href="https://twitter.com/i/user/${tweet.user_id}">
         <span>${user.name}</span>
@@ -28,7 +31,10 @@ function TweetCard(tweet, assets, user) {
     html += `
       <article id="tweet-image_${asset.id}" title="${asset.ext_alt_text ?? ""}">
         <a href="${asset.url}">
-          <img src="${asset.url}">
+          <img
+            src="${asset.url}"
+            onerror="this.onerror=null;this.src='${PROXY_URL + encodeURIComponent(asset.url)}';this.style.border = '4px solid red';"
+          >
         </a>
       </article>`;
   }
